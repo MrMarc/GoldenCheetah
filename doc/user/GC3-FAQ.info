@@ -1,4 +1,4 @@
-This is GC3-FAQ.info, produced by makeinfo version 4.8 from
+This is GC3-FAQ.info, produced by makeinfo version 4.13 from
 GC3-FAQ.texinfo.
 
 This manual is for Golden Cheetah, version 3.0.
@@ -70,7 +70,7 @@ Weight can be maintained in 3 ways;
      is found on the     'Workout' tab in the details screen by
      default. Any entry here will be used for this ride     ONLY.
 
-   * You can download weight from a Withings scale. This is performed
+   * You can download weight from a withings scale. This is performed
      manually via the     menu option Tools->Get Withings Data. This is
      then used to update the local measures     database.
 
@@ -79,7 +79,7 @@ then fall back to the last Withing measure that was collected, and if
 that is not available we then fall back to the default value for the
 athlete.
 
-The weight from Withings and weight from the activity can both be
+The weight from withings and weight from the activity can both be
 plotted separately in the LTM plots.
 
 1.4 How do I plot x sec power best?
@@ -182,18 +182,18 @@ the functions of note are also available in GoldenCheetah.
 2.3 Where can I download the installer for GoldenCheetah ?
 ==========================================================
 
-Stable releases are available from www.goldencheetah.org whilst the
-latest and greatest code build is available from
-goldencheetah.stand2surf.net. Development builds are for the brave,
-since they may contain bugs. In reality the development builds are a
-changing feast and often contain latest fixes too.
+Stable releases are available from `http://www.goldencheetah.org'
+whilst the latest and greatest code build is available from
+`http://goldencheetah.stand2surf.net'. Development builds are for the
+brave, since they may contain bugs. In reality the development builds
+are a changing feast and often contain latest fixes too.
 
 2.4 Where can I get the source code?
 ====================================
 
-The GoldenCheetah source code is hosted on github here:
-www.github.com/GoldenCheetah/GoldenCheetah. It can be cloned locally
-using 'git clone git://github.com/GoldenCheetah/GoldenCheetah.git'.
+The GoldenCheetah source code is hosted on github and can be cloned
+using the following url;
+`git://github.com/GoldenCheetah/GoldenCheetah.git'
 
 2.5 I am a triathlete is GoldenCheetah appropriate for me?
 ==========================================================
@@ -209,7 +209,7 @@ triathlon, or working on the trainer.
 
 The mailing list for GoldenCheetah users is maintained via Google
 Groups at
-http://groups.google.com/forum/?fromgroups=#forum/golden-cheetah-uers
+`http://groups.google.com/forum/?fromgroups=#forum/golden-cheetah-users'
 the first post you make is moderated and may take a while to appear.
 Once your first post is made you can make future posts without
 moderation.
@@ -219,7 +219,7 @@ moderation.
 
 We use Github issues to record bugs and feature requests. You will need
 to create an account on github and then post a new request or bug at
-www.github.com/GoldenCheetah/GoldenCheetah/issues
+`http://www.github.com/GoldenCheetah/GoldenCheetah/issues'
 
 2.8 How can I contribute?
 =========================
@@ -259,7 +259,7 @@ training stress of the ride.
 In practice, NP and xPower are largely the same, whilst Daniels EqP
 place much higher emphasise on upper intensity work. For more info on
 xPower see Dr Skiba's paper on BikeScore
-http://www.physfarm.com/bikescore.pdf
+`http://www.physfarm.com/bikescore.pdf'
 
 3.2 What is the difference between CP and FTP?
 ==============================================
@@ -531,9 +531,9 @@ have less functionality.
 The upload to Google Calendar uses their CalDAV API, and as such needs
 to specify a collection. This means when entering the details in the
 passwords pane of preferences you should use the following for the
-CalDAV url:
+caldav url:
 
-https://www.google.com/calendar/dav/xxxx@gmail.com/events/
+`https://www.google.com/calendar/dav/xxxx@gmail.com/events/'
 
 Where xxxx is your username. The username will need to be repeated in
 the username field and obviously set the password too.
@@ -619,13 +619,13 @@ There is also an overview of Virtual Elevation to measure aerodynamics
 in this YouTube video from the power seminar at Interbike 2011 given by
 Jim Meyer the founder of Quarq:
 
-http://www.youtube.com/watch?v=b8tJnFE_BFg&feature=youtu.be&t=27m58s
+`http://www.youtube.com/watch?v=b8tJnFE_BFg&feature=youtu.be&t=27m58s'
 
 Finally, Robert Chung's original paper is included in the docs section
 of the GoldenCheetah repository, you can it up here (click on 'View
 Raw' to download):
 
-https://github.com/GoldenCheetah/GoldenCheetah/blob/master/doc/contrib/ChungVE.pdf
+`https://github.com/GoldenCheetah/GoldenCheetah/blob/master/doc/contrib/ChungVE.pdf'
 
 7.4 My map doesn't show?
 ========================
@@ -780,14 +780,14 @@ Index
 
 
 Tag Table:
-Node: Top163
-Node: MOST COMMON QUESTIONS OF ALL608
-Node: GENERAL6061
-Node: METRICS9702
-Node: DATA16692
-Node: UPLOADING AND DOWNLOADING20622
-Node: SEASONS AND EVENTS22385
-Node: CHARTS23244
-Node: INDEX28041
+Node: Top164
+Node: MOST COMMON QUESTIONS OF ALL609
+Node: GENERAL6062
+Node: METRICS9684
+Node: DATA16676
+Node: UPLOADING AND DOWNLOADING20606
+Node: SEASONS AND EVENTS22371
+Node: CHARTS23230
+Node: INDEX28031
 
 End Tag Table
