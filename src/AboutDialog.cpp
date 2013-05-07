@@ -1,13 +1,27 @@
+/*
+ * Copyright (c) 2013 Mark Liversedge (liversedge@gmail.com)
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the Free
+ * Software Foundation; either version 2 of the License, or (at your option)
+ * any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+ * more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc., 51
+ * Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ */
+
 #include "AboutDialog.h"
+#include "GcUpgrade.h"
 
 #include "DBAccess.h"
 #include "MetricAggregator.h"
 #include <QtSql>
-
-#ifndef GC_VERSION
-#define GC_VERSION "(developer build)"
-#endif
-
 
 #define GCC_VERSION QString("%1.%2.%3").arg(__GNUC__).arg(__GNUC_MINOR__).arg(__GNUC_PATCHLEVEL__)
 
@@ -42,14 +56,17 @@ AboutDialog::AboutDialog(MainWindow *mainWindow, QDir home) : mainWindow(mainWin
     aboutPage = new AboutPage(mainWindow, home);
     versionPage = new VersionPage(mainWindow, home);
     contributorsPage = new ContributorsPage(mainWindow, home);
+#ifndef GC_VERSION
     configPage = new ConfigPage(mainWindow, home);
+#endif
 
     tabWidget = new QTabWidget;
     tabWidget->setContentsMargins(0,0,0,0);
-
     tabWidget->addTab(aboutPage, tr("About"));
     tabWidget->addTab(versionPage, tr("Version"));
+#ifndef GC_VERSION
     tabWidget->addTab(configPage, tr("Config"));
+#endif
     tabWidget->addTab(contributorsPage, tr("Contributors"));
 
     mainLayout = new QVBoxLayout;
@@ -218,13 +235,19 @@ VersionPage::VersionPage(MainWindow *main, QDir home) : main(main), home(home)
 
     QString gc_version = tr(
             "<p>Build date: %1 %2"
-            "<br>Version: %3"
-            "<br>DB Schema: %4"
-            "<br>OS: %5"
+            "<br>Build id: %3"
+            "<br>Version: %4"
+            "<br>DB Schema: %5"
+            "<br>OS: %6"
             "<br>")
             .arg(__DATE__)
             .arg(__TIME__)
+            .arg(GcUpgrade::version())
+#ifdef GC_VERSION
             .arg(GC_VERSION)
+#else
+            .arg("(developer build)")
+#endif
             .arg(schemaVersion)
             .arg(os);
 
@@ -313,6 +336,7 @@ ContributorsPage::ContributorsPage(MainWindow *main, QDir home) : main(main), ho
     contributors.append("Jamie Kimberley");
     contributors.append("Jim Ley");
     contributors.append("John Ehrlinger");
+    contributors.append("Jon Escombe");
     contributors.append("Josef Gebel");
     contributors.append("Julian Baumgartner");
     contributors.append("Julian Simioni");
