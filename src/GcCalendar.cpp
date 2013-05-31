@@ -121,9 +121,11 @@ GcCalendar::GcCalendar(MainWindow *main) : main(main)
 void
 GcCalendar::refresh()
 {
-    multiCalendar->refresh();
-    setSummary();
-    repaint();
+    if (!isHidden()) {
+        multiCalendar->refresh();
+        setSummary();
+        repaint();
+    }
 }
 
 void
@@ -648,7 +650,8 @@ GcMiniCalendar::previous()
 
     // begin of month
     QDateTime bom(QDate(year,month,01), QTime(0,0,0));
-    for(int i=allDates.count()-1; i>0; i--) {
+
+    for(int i=allDates.count()-1; i>=0; i--) {
         if (allDates.at(i) < bom) {
 
             QDate date = allDates.at(i).date();
@@ -951,6 +954,13 @@ GcMultiCalendar::setRide(RideItem *ride)
     if (active) return;
     if (!isVisible()) {
         stale = true;
+
+        // notify of ride gone though as not repeated
+        if (!_ride) {
+            for (int i=0; i<showing; i++) {
+                calendars.at(i)->setRide(_ride); // current ride is on this one
+            }
+        }
         return;
     }
 
